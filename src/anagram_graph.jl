@@ -15,14 +15,18 @@ function is_anagram(w1::String, w2::String)::Bool
 end
 
 """
-    anagram_graph(S, len=0, trim=true)
+    anagram_graph(S, len=0, trim=false)
 Create a graph whose vertices are words in `S` of length `len` in which two words are 
 adjacent if they are anagrams of each other.  If `len` is zero, all words are used.
 If `trim` is true, vertices of degree zero are removed.
 
 Note that every component of this graph is a clique.
 """
-function anagram_graph(S::Set{String}, len::Int = 0, trim::Bool = true)::SimpleGraph{String}
+function anagram_graph(
+    S::Set{String},
+    len::Int = 0,
+    trim::Bool = false,
+)::SimpleGraph{String}
     G = _bare_graph(S, len)
 
     # add edges
