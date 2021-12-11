@@ -65,7 +65,7 @@ as for `ladder_graph`.
 julia> Words = make_word_set();
 
 julia> G = anagram_graph(Words, 4)
-Anagram Graph on 4-letter words (n=2275, m=2041)
+Anagram Graph on 4-letter words (n=4347, m=2041)
 
 julia> G["stop"]
 3-element Vector{String}:
