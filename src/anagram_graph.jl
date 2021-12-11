@@ -15,7 +15,7 @@ function is_anagram(w1::String, w2::String)::Bool
 end
 
 """
-    anagram_graph(S, len=0, trim=0)
+    anagram_graph(S, len=0, trim=true)
 Create a graph whose vertices are words in `S` of length `len` in which two words are 
 adjacent if they are anagrams of each other.  If `len` is zero, all words are used.
 If `trim` is true, vertices of degree zero are removed.

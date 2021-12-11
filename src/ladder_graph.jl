@@ -6,16 +6,27 @@ export ladder_graph
 return true if words `w1` and `w2` have the same length
 and differ in exactly one location.
 """
-function ladder_adj(w1::String, w2::String)::Bool 
+function ladder_adj(w1::String, w2::String)::Bool
     if length(w1) != length(w2)
-        return false 
-    end 
+        return false
+    end
     c = collect(w1) .!= collect(w2)
     return sum(c) == 1
 end
 
-function ladder_graph(S::Set{String}, len::Int = 0, trim::Bool = true)::SimpleGraph{String}
-    G = _bare_graph(S,len)
+"""
+    ladder_graph(S::Set{String}, len::Int=0, trim::Bool=false)
+
+Create a graph whose vertices are words in which two words are adjacent if they differ
+in exactly one letter. 
+
+We use only words of length `len`, unless this is set to `0`
+in which case all words are used.
+
+If `trim` is set to `true` then vertices of degree zero are deleted.
+"""
+function ladder_graph(S::Set{String}, len::Int = 0, trim::Bool = false)::SimpleGraph{String}
+    G = _bare_graph(S, len)
 
     VV = vlist(G)
     n = NV(G)
