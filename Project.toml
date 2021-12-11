@@ -1,0 +1,14 @@
+name = "WordGraphs"
+uuid = "1b0b0e52-fe23-4275-8ccb-42ed58001e55"
+authors = ["Ed Scheinerman <ers@jhu.edu>"]
+version = "0.0.1"
+
+[deps]
+
+SimpleGraphs = "55797a34-41de-5266-9ec1-32ac4eb504d3"
+Counters = "5a653867-b65e-5b16-a095-b1e26d522bbf"
+
+[compat]
+
+SimpleGraphs = "0.7"
+Counters = "0.3"
