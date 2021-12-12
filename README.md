@@ -112,8 +112,3 @@ julia> find_path(GH, "good", "evil")
  "vile"
  "evil"
  ```
-
- ## To do
-
- Create a `shift_digraph` with edges of the form 
- `"abcd" → "bcde"`.
