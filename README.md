@@ -75,6 +75,18 @@ julia> G["stop"]
  ```
  This shows that the word *stop* has three anagrams: *post*, *spot*, and *tops*. 
 
+
+## Shift Graph
+
+In this graph, two words are adjacent if we can drop the first letter of one word, add a letter
+and give the other word. For example *stranger* is adjacent to *estrange* because we drop the *e*
+in *estrange* and then append an *r*. 
+
+Create a shift graph by `shift_graph(words, len)` where `words` is a word set and 
+`len` is the length of the words in the graph (use `0` for all words).
+
+
+
 ## Combining
 
 In this example, we combine a ladder graph with an anagram graph to find a 
