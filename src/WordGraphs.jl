@@ -57,5 +57,6 @@ end
 
 include("anagram_graph.jl")
 include("ladder_graph.jl")
+include("shift_digraph.jl")
 
 end # module
