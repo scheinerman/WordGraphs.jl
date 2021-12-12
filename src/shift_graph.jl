@@ -1,15 +1,15 @@
-export shift_digraph
+export shift_graph
 
-function shift_digraph(
+function shift_graph(
     S::Set{String},
     len::Int = 0,
     trim::Bool = false,
-)::SimpleDigraph{String}
+)::SimpleGraph{String}
 
 
-    G0 = WordGraphs._bare_graph(S, len)
-    G = SimpleDigraph{String}()
-    for v in G0.V 
+    G = _bare_graph(S, len)
+
+    for v in G.V 
         add!(G,v)
     end
 
@@ -22,6 +22,14 @@ function shift_digraph(
             end
         end
     end
+
+
+    if len < 1
+        name(G, "Shift Graph on all words")
+    else
+        name(G, "Shift Graph on $len-letter words")
+    end
+
     return G
 
 end
