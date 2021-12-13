@@ -6,9 +6,9 @@ version = "0.0.1"
 [deps]
 
 SimpleGraphs = "55797a34-41de-5266-9ec1-32ac4eb504d3"
-Counters = "5a653867-b65e-5b16-a095-b1e26d522bbf"
+Combinatorics = "861a8166-3701-5b0c-9a16-15d98fcdc6aa"
 
 [compat]
 
 SimpleGraphs = "0.7"
-Counters = "0.3"
+Combinatorics = "1"

@@ -14,6 +14,13 @@ function is_anagram(w1::String, w2::String)::Bool
     return c1 == c2
 end
 
+
+function make_anagrams(word::String)::Vector{String}
+    anags = unique(collect(permutations(word)))
+    return join.(anags)
+end
+
+
 """
     anagram_graph(S, len=0, trim=false)
 Create a graph whose vertices are words in `S` of length `len` in which two words are 
@@ -30,18 +37,17 @@ function anagram_graph(
     G = _bare_graph(S, len)
 
     # add edges
+    
     VV = vlist(G)
     n = NV(G)
-
-    for i = 1:n-1
-        w1 = VV[i]
-        for j = i+1:n
-            w2 = VV[j]
-            if is_anagram(w1, w2)
-                add!(G, w1, w2)
+    for v ∈ G.V 
+        for w ∈ make_anagrams(v)
+            if w ∈ G.V 
+                add!(G,v,w)
             end
         end
     end
+
 
     # remove vertices of degree zero (if trim is true)
     if trim

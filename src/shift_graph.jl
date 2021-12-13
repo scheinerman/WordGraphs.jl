@@ -20,7 +20,7 @@ function shift_graph(S::Set{String}, len::Int = 0, trim::Bool = false)::SimpleGr
 
     for w in G.V
         tail = w[2:end]
-        for c in "abcdefghijklmnopqrstuvwxyz"
+        for c in _A2Z
             ww = tail * c
             if has(G, ww)
                 add!(G, w, ww)

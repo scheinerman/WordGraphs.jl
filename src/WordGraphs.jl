@@ -1,8 +1,10 @@
 module WordGraphs
 
-using SimpleGraphs, Counters
+using SimpleGraphs, Combinatorics
 
 export make_word_set
+
+const _A2Z = "abcdefghijklmnopqrstuvwxyz"
 
 """
     make_word_set
