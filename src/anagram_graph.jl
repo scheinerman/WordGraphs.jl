@@ -37,14 +37,20 @@ function anagram_graph(
     G = _bare_graph(S, len)
 
     # add edges
-    
-    VV = vlist(G)
+
+    VV = deepcopy(G.V)
     n = NV(G)
-    for v ∈ G.V 
-        for w ∈ make_anagrams(v)
-            if w ∈ G.V 
-                add!(G,v,w)
+    while length(VV) > 0
+        v = first(VV)
+        anas = [ana for ana ∈ make_anagrams(v) if ana ∈ G.V ]
+        nana = length(anas)
+        for i=1:nana-1 
+            for j=i+1:nana 
+                add!(G,anas[i], anas[j])
             end
+        end
+        for a in anas
+            delete!(VV,a)
         end
     end
 
