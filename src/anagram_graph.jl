@@ -40,7 +40,10 @@ function anagram_graph(
 
     VV = deepcopy(G.V)
     n = NV(G)
+    PM = Progress(n)
+
     while length(VV) > 0
+        next!(PM)
         v = first(VV)
         anas = [ana for ana ∈ make_anagrams(v) if ana ∈ G.V ]
         nana = length(anas)
@@ -48,6 +51,7 @@ function anagram_graph(
             for j=i+1:nana 
                 add!(G,anas[i], anas[j])
             end
+            next!(PM)
         end
         for a in anas
             delete!(VV,a)

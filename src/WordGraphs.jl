@@ -1,6 +1,6 @@
 module WordGraphs
 
-using SimpleGraphs, Combinatorics
+using SimpleGraphs, Combinatorics, ProgressMeter
 
 export make_word_set
 

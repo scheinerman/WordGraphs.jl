@@ -14,11 +14,13 @@ function shift_graph(S::Set{String}, len::Int = 0, trim::Bool = false)::SimpleGr
 
     G = _bare_graph(S, len)
 
-    for v in G.V
-        add!(G, v)
-    end
+    # for v in G.V
+    #     add!(G, v)
+    # end
 
+    PM = Progress(NV(G))
     for w in G.V
+        next!(PM)
         tail = w[2:end]
         for c in _A2Z
             ww = tail * c

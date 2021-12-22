@@ -28,7 +28,10 @@ If `trim` is set to `true` then vertices of degree zero are deleted.
 function ladder_graph(S::Set{String}, len::Int = 0, trim::Bool = false)::SimpleGraph{String}
     G = _bare_graph(S, len)
 
+    PM = Progress(NV(G))
+
     for v ∈ G.V
+        next!(PM)
         nv = length(v)
         for i ∈ 1:nv
             for c ∈ _A2Z
