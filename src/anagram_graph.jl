@@ -45,16 +45,16 @@ function anagram_graph(
     while length(VV) > 0
         next!(PM)
         v = first(VV)
-        anas = [ana for ana ∈ make_anagrams(v) if ana ∈ G.V ]
+        anas = [ana for ana ∈ make_anagrams(v) if ana ∈ G.V]
         nana = length(anas)
-        for i=1:nana-1 
-            for j=i+1:nana 
-                add!(G,anas[i], anas[j])
+        for i = 1:nana-1
+            for j = i+1:nana
+                add!(G, anas[i], anas[j])
             end
             next!(PM)
         end
         for a in anas
-            delete!(VV,a)
+            delete!(VV, a)
         end
     end
 
