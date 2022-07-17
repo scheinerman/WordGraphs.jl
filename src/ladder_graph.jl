@@ -25,7 +25,7 @@ in which case all words are used.
 
 If `trim` is set to `true` then vertices of degree zero are deleted.
 """
-function ladder_graph(S::Set{String}, len::Int = 0, trim::Bool = false)::SimpleGraph{String}
+function ladder_graph(S::Set{String}, len::Int = 0, trim::Bool = false)::UG{String}
     G = _bare_graph(S, len)
 
     PM = Progress(NV(G))

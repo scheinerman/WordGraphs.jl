@@ -33,7 +33,7 @@ function anagram_graph(
     S::Set{String},
     len::Int = 0,
     trim::Bool = false,
-)::SimpleGraph{String}
+)::UG{String}
     G = _bare_graph(S, len)
 
     # add edges

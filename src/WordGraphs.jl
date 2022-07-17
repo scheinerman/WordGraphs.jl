@@ -40,7 +40,7 @@ end
 Create a word graph with no edges. The words are the elements of `S`
 that have length `len`, unless `len==0` in which case all words are added.
 """
-function _bare_graph(S::Set{String}, len::Int = 0)::SimpleGraph{String}
+function _bare_graph(S::Set{String}, len::Int = 0)::UG{String}
     G = StringGraph()
     # add words in S as vertices of the graph
     if len < 1     # add all words
