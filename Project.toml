@@ -11,6 +11,6 @@ ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
 
 [compat]
 
-SimpleGraphs = "0.7, 0.8"
+SimpleGraphs = "0.8"
 Combinatorics = "1"
 ProgressMeter = "1"
